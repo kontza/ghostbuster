@@ -27,7 +27,7 @@ if __name__ == "__main__":
         )
     for loop in range(0, limit):
         resp = requests.get("https://jsonplaceholder.typicode.com/photos")
-        prefix = f"Processing iteration {loop}..."
+        prefix = f"Processing iteration {loop+1}..."
         with loggingConsole.status(prefix) as status:
             for entry in resp.json():
                 status.update(status=f"{prefix} ID: {entry['id']}")
